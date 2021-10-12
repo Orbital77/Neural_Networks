@@ -1,5 +1,5 @@
 nn: nn_main.o nn_utils.o
-	gcc nn_main.o nn_utils.o -o nn -lm
+	gcc nn_main.o nn_utils.o -o nn -lm -g -Wall -Wextra -Werror
 
 nn_main.o: nn_main.c
 	gcc -c nn_main.c

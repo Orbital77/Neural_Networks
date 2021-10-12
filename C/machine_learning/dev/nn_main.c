@@ -8,18 +8,92 @@
 
 int main(int argc, char **argv){
 	if (argc == 4){
-		Network network;
-		Network *N = &network;
+/*
+		Network *N;
 
-		load_network(argv[1], argv[2], N, 6);
+		N = load_network(argv[1], argv[2], 6);
 
 		activate_network(N);
 
 		calculate_loss(N);
 
+		calculate_accuracy(N);
+
 		display_network(N);
 
-		free_memory_network(N, 6);
+		backprop_network(N);
+
+		stochastic_gradient_descent(N, 1.0);
+
+		activate_network(N);
+
+		calculate_loss(N);
+
+		calculate_accuracy(N);
+
+		display_network(N);
+
+                backprop_network(N);
+
+                stochastic_gradient_descent(N, 1.0);
+
+                activate_network(N);
+
+                calculate_loss(N);
+
+                calculate_accuracy(N);
+
+                display_network(N);
+
+		for (int i = 0; i < 1; i++)
+		{
+			backprop_network(N);
+
+			stochastic_gradient_descent(N, 1.0);
+
+			activate_network(N);
+
+			calculate_loss(N);
+
+			calculate_accuracy(N);
+		}
+
+		display_network(N);
+*/
+
+		Network *N;
+		int network[7] = {4, 16, 32, 32, 16, 8, 4};
+
+		N = create_network(argv[2], 7, network);
+
+		train_network(N, argv[2], 100000);
+/*
+		activate_network(N);
+
+		calculate_loss(N);
+
+		calculate_accuracy(N);
+
+		display_network(N);
+
+		for (int i = 0; i < 100000; i++)
+		{
+			backprop_network(N);
+
+			stochastic_gradient_descent(N, 0.005);
+
+			activate_network(N);
+
+			calculate_loss(N);
+
+			calculate_accuracy(N);
+		}
+
+		display_network(N);
+
+//		save_network(argv[3], N);
+*/
+		free_memory_network(N, 7);
 
 		return 0;
 	}
